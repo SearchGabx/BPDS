@@ -1,1 +1,1 @@
-hola 
+console.log("Soy un script de javascript");
