@@ -172,3 +172,29 @@ button:hover {
   border-radius: 12px;
 }
 
+@media (max-width: 560px) {
+  .page {
+    padding: 24px 12px;
+  }
+
+  .todoCard {
+    padding: 24px 16px;
+  }
+
+  .addForm {
+    flex-direction: column;
+  }
+
+  .addForm button {
+    width: 100%;
+  }
+
+  .taskItem {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .actions {
+    width: 100%;
+  }
+}
