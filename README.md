@@ -1,4 +1,16 @@
+# BPDS - Atlantico Option Scholarship Program
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+## Project Overview
+
+BPDS is a management platform designed to track and manage pending applications for the Atlantico Option Scholarship Program. This system provides institutional support for managing the commitments and administrative tasks of the program's directorate board.
+
+<img width="551" height="479" alt="image" src="https://github.com/user-attachments/assets/e2c62122-a61f-492f-a7fa-894b9918592b" />
+
+## Purpose
+
+The platform serves as a centralized workspace for managing the pending applications of the Atlantico Option Scholarship Program. It enables efficient tracking and coordination of administrative tasks through an organized interface for data entry and management.
 
 ## Getting Started
 
