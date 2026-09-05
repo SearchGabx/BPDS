@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Lista de Tareas - Opción Atlántico
 
-## Getting Started
+![Atlántico Logo](https://img.shields.io/badge/Proyecto-Opción%20Atlántico-red)
 
-First, run the development server:
+## 📋 Descripción del Proyecto
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+**Seguimiento de pendientes en la beca institucional** es una plataforma web diseñada para gestionar y hacer seguimiento de los compromisos de la mesa directiva del programa de becas Opción Atlántico.
+
+Este espacio centraliza la administración de tareas y pendientes, facilitando la coordinación y el cumplimiento de los objetivos institucionales del programa.
+
+## 🎯 Objetivo
+
+Proporcionar una herramienta eficiente para:
+- 📝 Registrar y organizar los compromisos de la mesa directiva
+- ✅ Dar seguimiento al estado de tareas pendientes
+- 📊 Mejorar la coordinación del programa de becas
+- 🔍 Mantener transparencia en los procesos administrativos
+
+## 🛠️ Stack Tecnológico
+
+Este proyecto está construido con:
+
+- **[Next.js](https://nextjs.org)** - Framework React moderno para aplicaciones web
+- **React** - Librería de interfaz de usuario
+- **TypeScript** - Tipado seguro de JavaScript
+- **Tailwind CSS** - Estilos y diseño responsivo
+
+## 🚀 Comenzar
+
+### Requisitos Previos
+
+- Node.js 18+ 
+- npm, yarn, pnpm o bun
+
+### Instalación y Ejecución
+
+1. **Instala las dependencias:**
+   ```bash
+   npm install
+   ```
+
+2. **Ejecuta el servidor de desarrollo:**
+   ```bash
+   npm run dev
+   # o
+   yarn dev
+   # o
+   pnpm dev
+   # o
+   bun dev
+   ```
+
+3. **Abre en tu navegador:**
+   ```
+   http://localhost:3000
+   ```
+
+El sitio se actualizará automáticamente a medida que edites los archivos.
+
+## 📁 Estructura del Proyecto
+
+```
+BPDS/
+├── app/              # Rutas y páginas de la aplicación
+├── components/       # Componentes reutilizables
+├── public/           # Archivos estáticos
+├── styles/           # Estilos globales
+└── README.md         # Este archivo
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Características Principales
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- ✍️ **Gestión de Tareas**: Registro de pendientes de la mesa directiva
+- 📤 **Ingreso de Datos**: Interfaz intuitiva para agregar compromisos
+- 📊 **Seguimiento**: Visualización del estado de las tareas
+- 🎨 **Diseño Responsivo**: Funciona en dispositivos móviles y de escritorio
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📖 Documentación Adicional
 
-## Learn More
+Para más información sobre Next.js:
+- [Documentación de Next.js](https://nextjs.org/docs)
+- [Tutorial interactivo](https://nextjs.org/learn)
+- [Repositorio oficial](https://github.com/vercel/next.js)
 
-To learn more about Next.js, take a look at the following resources:
+## 🚢 Despliegue
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+La forma más fácil de desplegar esta aplicación es usando la [Plataforma Vercel](https://vercel.com).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Para más detalles, consulta la [documentación de despliegue de Next.js](https://nextjs.org/docs/app/building-your-application/deploying).
 
-## Deploy on Vercel
+## 👥 Contribuciones
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Las contribuciones son bienvenidas. Para cambios importantes:
+1. Abre un issue describiendo la mejora
+2. Crea una rama con tu feature
+3. Envía un pull request
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📞 Contacto y Soporte
+
+Para preguntas o soporte sobre el programa de becas Opción Atlántico, contacta con la mesa directiva institucional.
+
+---
+
+**Buen trabajo, chicos. ¡Tomen un descanso!** 💪
+
+*Última actualización: 2026*
