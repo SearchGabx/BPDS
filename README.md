@@ -1,4 +1,5 @@
 # BPDS - Atlantico Option Scholarship Program
+Team: Arenas, Mendoza, Truyo, Estrada, Barrios.
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
