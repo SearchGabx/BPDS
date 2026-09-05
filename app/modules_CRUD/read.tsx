@@ -1,6 +1,7 @@
 import styles from "../page.module.css";
 import { Task } from "../page";
 import Update from "./update";
+import Delete from "./delete";
  
  
 export default function Read({ tasks, completedTasks, handleToggleTask, handleDeleteTask, handleUpdateTask }: any) {
@@ -17,9 +18,7 @@ export default function Read({ tasks, completedTasks, handleToggleTask, handleDe
                     {tasks.map((item: Task) => (
                         <li key={item.id} className={styles.taskItem}>
                             <Update item={item} handleToggleTask={handleToggleTask} handleUpdateTask={handleUpdateTask} />
-                            <div className={styles.actions}>
-                                <button className={styles.deleteButton} onClick={() => handleDeleteTask(item.id)}>Eliminar</button>
-                            </div>
+                            <Delete id={item.id} handleDeleteTask={handleDeleteTask} />
                         </li>
                     ))}
                 </ul>

@@ -2,6 +2,7 @@
 import { useState } from "react";
 import styles from "../page.module.css";
  
+ 
 export default function Update({ item, handleToggleTask, handleUpdateTask }: any) {
     const [isEditing, setIsEditing] = useState(false);
     const [editText, setEditText] = useState(item.text);
@@ -15,6 +16,14 @@ export default function Update({ item, handleToggleTask, handleUpdateTask }: any
         setIsEditing(false);
     };
  
+    const handleKeyDown = (e: React.KeyboardEvent) => {
+        if (e.key === "Enter") handleSave();
+        if (e.key === "Escape") {
+            setEditText(item.text);
+            setIsEditing(false);
+        }
+    };
+ 
     if (isEditing) {
         return (
             <div style={{ display: 'flex', gap: '8px', flex: 1, width: '100%' }}>
@@ -23,6 +32,8 @@ export default function Update({ item, handleToggleTask, handleUpdateTask }: any
                     className={styles.editInput}
                     value={editText}
                     onChange={(e) => setEditText(e.target.value)}
+                    onKeyDown={handleKeyDown}
+                    autoFocus
                 />
                 <button className={styles.saveButton} onClick={handleSave}>Guardar</button>
             </div>
