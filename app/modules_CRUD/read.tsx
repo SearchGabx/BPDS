@@ -2,8 +2,8 @@ import styles from "../page.module.css";
 import { Task } from "../page";
 import Update from "./update";
 import Delete from "./delete";
- 
- 
+
+
 export default function Read({ tasks, completedTasks, handleToggleTask, handleDeleteTask, handleUpdateTask }: any) {
     return (
         <div>
@@ -12,7 +12,7 @@ export default function Read({ tasks, completedTasks, handleToggleTask, handleDe
                 <span>({completedTasks}/{tasks.length})</span>
             </div>
             {tasks.length === 0 ? (
-                <div className={styles.emptyState}>No hay tareas pendientes. ¡Buen trabajo!</div>
+                <div className={styles.emptyState}>Buen trabajo, chicos. Tomen un descanso!</div>
             ) : (
                 <ul className={styles.taskList}>
                     {tasks.map((item: Task) => (
@@ -26,4 +26,3 @@ export default function Read({ tasks, completedTasks, handleToggleTask, handleDe
         </div>
     );
 }
- 
