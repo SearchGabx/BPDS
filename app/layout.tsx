@@ -1,12 +1,12 @@
 import "./globals.css";
  
-import { Inter } from "next/font/google";
+import { Red_Hat_Display } from "next/font/google";
 import type { ReactNode } from "react";
  
-const inter = Inter({ subsets: ["latin"] });
+const redHatDisplay = Red_Hat_Display({ subsets: ["latin"] });
  
 export const metadata = {
-  title: "To-Do Master | Fase 3",
+  title: "Tareas OP-A",
   description: "Una aplicación de gestión de tareas construida con React y Next.js usando buenas prácticas.",
   keywords: "react, nextjs, todo, crud",
   icons: {
@@ -21,7 +21,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="es">
-      <body className={inter.className}>
+      <body className={redHatDisplay.className}>
         {children}
       </body>
     </html>

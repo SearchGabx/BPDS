@@ -53,10 +53,15 @@ export default function Home() {
     return (
         <main className={styles.page}>
             <section className={styles.todoCard}>
-                <p className={styles.eyebrow}>TO-DO LIST</p>
-                <h1>Seguimiento de pendientes</h1>
+                <img
+                    className={styles.logo}
+                    src="/OA-LOGO.svg"
+                    alt="Logo de Opción Atlántico"
+                />
+                <p className={styles.eyebrow}>Lista de Tareas Opción Atlántico</p>
+                <h1>Seguimiento de pendientes en la beca institucional</h1>
                 <p className={styles.subtitle}>
-                    Este espacio te será de utilidad para la gestión de tus compromisos. Seamos productivos!
+                    Este espacio será de utilidad para la gestión de los compromisos de la mesa directiva del programa de becas Opción Atlántico. 
                 </p>
  
                 <Create
