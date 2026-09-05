@@ -1,55 +1,72 @@
 "use client";
- 
- 
+
 import { useState, useEffect } from "react";
 import styles from "./page.module.css";
 import Create from "./modules_CRUD/create";
 import Read from "./modules_CRUD/read";
- 
+import { getTasks, saveTasks } from "./actions"; // Integración de persistencia JSON
+
 export interface Task {
     id: number;
     text: string;
     done: boolean;
 }
- 
- 
+
 function useTasks() {
     const [tasks, setTasks] = useState<Task[]>([]);
- 
+    const [isLoaded, setIsLoaded] = useState(false); // Estado para saber si ya cargó el JSON
+
+    // Cargar las tareas desde el JSON al montar el componente
+    useEffect(() => {
+        getTasks().then((loadedTasks) => {
+            if (loadedTasks) {
+                setTasks(loadedTasks);
+            }
+            setIsLoaded(true);
+        });
+    }, []);
+
+    // Guardar en el JSON cada vez que tasks cambia
+    useEffect(() => {
+        if (isLoaded) {
+            saveTasks(tasks);
+        }
+    }, [tasks, isLoaded]);
+
     const handleAddTask = (taskText: string) => {
         if (!taskText.trim()) return;
         const nuevaTarea: Task = { id: Date.now(), text: taskText.trim(), done: false };
         setTasks((prev) => [nuevaTarea, ...prev]);
     };
- 
+
     const handleToggleTask = (id: number) => {
         setTasks((prev) => prev.map((item) =>
             item.id === id ? { ...item, done: !item.done } : item
         ));
     };
- 
+
     const handleDeleteTask = (id: number) => {
         setTasks((prev) => prev.filter((item) => item.id !== id));
     };
- 
+
     const handleUpdateTask = (id: number, newText: string) => {
         setTasks((prev) => prev.map((item) =>
             item.id === id ? { ...item, text: newText } : item
         ));
     };
- 
+
     return { tasks, handleAddTask, handleToggleTask, handleDeleteTask, handleUpdateTask };
 }
- 
+
 export default function Home() {
     // El estado del Input lo mantenemos en Home, pero la lógica fuerte viene del hook.
     const [task, setTask] = useState("");
-   
+
     // Invocamos nuestro Custom Hook
     const { tasks, handleAddTask, handleToggleTask, handleDeleteTask, handleUpdateTask } = useTasks();
- 
+
     const completedTasks = tasks.filter((item) => item.done).length;
- 
+
     return (
         <main className={styles.page}>
             <section className={styles.todoCard}>
@@ -61,9 +78,9 @@ export default function Home() {
                 <p className={styles.eyebrow}>Lista de Tareas Opción Atlántico</p>
                 <h1>Seguimiento de pendientes en la beca institucional</h1>
                 <p className={styles.subtitle}>
-                    Este espacio será de utilidad para la gestión de los compromisos de la mesa directiva del programa de becas Opción Atlántico. 
+                    Este espacio será de utilidad para la gestión de los compromisos de la mesa directiva del programa de becas Opción Atlántico.
                 </p>
- 
+
                 <Create
                     task={task}
                     setTask={setTask}
@@ -72,7 +89,7 @@ export default function Home() {
                         setTask(""); // Limpiamos el input después de agregar
                     }}
                 />
- 
+
                 <Read
                     tasks={tasks}
                     completedTasks={completedTasks}
@@ -84,4 +101,3 @@ export default function Home() {
         </main>
     );
 }
- 
