@@ -1,7 +1,9 @@
 import styles from "../page.module.css";
-import type { Task } from "../page";
+import { Task } from "../page";
+import Update from "./update";
  
-export default function Read({ tasks, completedTasks, handleToggleTask, handleDeleteTask }: any) {
+ 
+export default function Read({ tasks, completedTasks, handleToggleTask, handleDeleteTask, handleUpdateTask }: any) {
     return (
         <div>
             <div className={styles.taskHeader}>
@@ -14,10 +16,7 @@ export default function Read({ tasks, completedTasks, handleToggleTask, handleDe
                 <ul className={styles.taskList}>
                     {tasks.map((item: Task) => (
                         <li key={item.id} className={styles.taskItem}>
-                            <label className={styles.taskLabel}>
-                                <input type="checkbox" checked={item.done} onChange={() => handleToggleTask(item.id)} />
-                                <span className={item.done ? styles.completed : ""}>{item.text}</span>
-                            </label>
+                            <Update item={item} handleToggleTask={handleToggleTask} handleUpdateTask={handleUpdateTask} />
                             <div className={styles.actions}>
                                 <button className={styles.deleteButton} onClick={() => handleDeleteTask(item.id)}>Eliminar</button>
                             </div>
