@@ -1,4 +1,16 @@
+# BPDS - Atlantico Option Scholarship Program
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+## Project Overview
+
+BPDS is a management platform designed to track and manage pending applications for the Atlantico Option Scholarship Program. This system provides institutional support for managing the commitments and administrative tasks of the program's directorate board.
+
+![Atlantico Option Scholarship Program Dashboard](https://github.com/SearchGabx/BPDS/assets/atlantico-program-dashboard.png)
+
+## Purpose
+
+The platform serves as a centralized workspace for managing the pending applications of the Atlantico Option Scholarship Program. It enables efficient tracking and coordination of administrative tasks through an organized interface for data entry and management.
 
 ## Getting Started
 
@@ -31,6 +43,6 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
