@@ -1,4 +1,16 @@
+# BPDS - Atlantico Option Scholarship Program
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+## Project Overview
+
+BPDS is a management platform designed to track and manage pending applications for the Atlantico Option Scholarship Program. This system provides institutional support for managing the commitments and administrative tasks of the program's directorate board.
+
+<img width="551" height="479" alt="image" src="https://github.com/user-attachments/assets/e2c62122-a61f-492f-a7fa-894b9918592b" />
+
+## Purpose
+
+The platform serves as a centralized workspace for managing the pending applications of the Atlantico Option Scholarship Program. It enables efficient tracking and coordination of administrative tasks through an organized interface for data entry and management.
 
 ## Getting Started
 
@@ -18,7 +30,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for V[...]
 
 ## Learn More
 
@@ -31,6 +43,6 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app[...])
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
