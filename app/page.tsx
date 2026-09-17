@@ -10,32 +10,37 @@ export interface Task {
     id: number;
     text: string;
     done: boolean;
+    isDeleted?: boolean;
 }
 
 function useTasks() {
     const [tasks, setTasks] = useState<Task[]>([]);
+    const [deletedTasks, setDeletedTasks] = useState<Task[]>([]);
     const [isLoaded, setIsLoaded] = useState(false); // Estado para saber si ya cargó el JSON
 
     // Cargar las tareas desde el JSON al montar el componente
     useEffect(() => {
         getTasks().then((loadedTasks) => {
             if (loadedTasks) {
-                setTasks(loadedTasks);
+                const active = loadedTasks.filter((t: Task) => !t.isDeleted);
+                const deleted = loadedTasks.filter((t: Task) => t.isDeleted);
+                setTasks(active);
+                setDeletedTasks(deleted);
             }
             setIsLoaded(true);
         });
     }, []);
 
-    // Guardar en el JSON cada vez que tasks cambia
+    // Guardar en el JSON cada vez que tasks o deletedTasks cambian
     useEffect(() => {
         if (isLoaded) {
-            saveTasks(tasks);
+            saveTasks([...tasks, ...deletedTasks]);
         }
-    }, [tasks, isLoaded]);
+    }, [tasks, deletedTasks, isLoaded]);
 
     const handleAddTask = (taskText: string) => {
         if (!taskText.trim()) return;
-        const nuevaTarea: Task = { id: Date.now(), text: taskText.trim(), done: false };
+        const nuevaTarea: Task = { id: Date.now(), text: taskText.trim(), done: false, isDeleted: false };
         setTasks((prev) => [nuevaTarea, ...prev]);
     };
 
@@ -45,8 +50,10 @@ function useTasks() {
         ));
     };
 
-    const handleDeleteTask = (id: number) => {
-        setTasks((prev) => prev.filter((item) => item.id !== id));
+    const handleDeleteTask = (item: Task) => {
+        const deletedItem = { ...item, isDeleted: true };
+        setDeletedTasks((prev) => [deletedItem, ...prev]);
+        setTasks((prev) => prev.filter((t) => t.id !== item.id));
     };
 
     const handleUpdateTask = (id: number, newText: string) => {
@@ -55,7 +62,11 @@ function useTasks() {
         ));
     };
 
-    return { tasks, handleAddTask, handleToggleTask, handleDeleteTask, handleUpdateTask };
+    const handlePermanentDeleteTask = (id: number) => {
+        setDeletedTasks((prev) => prev.filter((t) => t.id !== id));
+    };
+
+    return { tasks, deletedTasks, handleAddTask, handleToggleTask, handleDeleteTask, handleUpdateTask, handlePermanentDeleteTask };
 }
 
 export default function Home() {
@@ -63,7 +74,7 @@ export default function Home() {
     const [task, setTask] = useState("");
 
     // Invocamos nuestro Custom Hook
-    const { tasks, handleAddTask, handleToggleTask, handleDeleteTask, handleUpdateTask } = useTasks();
+    const { tasks, deletedTasks, handleAddTask, handleToggleTask, handleDeleteTask, handleUpdateTask, handlePermanentDeleteTask } = useTasks();
 
     const completedTasks = tasks.filter((item) => item.done).length;
 
@@ -92,10 +103,12 @@ export default function Home() {
 
                 <Read
                     tasks={tasks}
+                    deletedTasks={deletedTasks}
                     completedTasks={completedTasks}
                     handleToggleTask={handleToggleTask}
                     handleDeleteTask={handleDeleteTask}
                     handleUpdateTask={handleUpdateTask}
+                    handlePermanentDeleteTask={handlePermanentDeleteTask}
                 />
             </section>
         </main>

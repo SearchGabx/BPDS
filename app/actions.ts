@@ -13,7 +13,13 @@ export async function getTasks() {
             fs.writeFileSync(dataFilePath, JSON.stringify([]));
         }
         const data = fs.readFileSync(dataFilePath, "utf8");
-        return JSON.parse(data);
+        const parsedData = JSON.parse(data);
+
+        if (Array.isArray(parsedData)) {
+            return parsedData;
+        }
+
+        return Array.isArray(parsedData.tasks) ? parsedData.tasks : [];
     } catch (error) {
         console.error("Error leyendo JSON:", error);
         return [];
