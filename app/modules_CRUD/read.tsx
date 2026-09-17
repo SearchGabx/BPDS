@@ -7,10 +7,6 @@ import Delete from "./delete";
 export default function Read({ tasks, completedTasks, handleToggleTask, handleDeleteTask, handleUpdateTask }: any) {
     return (
         <div>
-            <div className={styles.taskHeader}>
-                <h2>Tareas</h2>
-                <span>({completedTasks}/{tasks.length})</span>
-            </div>
             {tasks.length === 0 ? (
                 <div className={styles.emptyState}>Buen trabajo, chicos. Tomen un descanso!</div>
             ) : (
@@ -23,6 +19,10 @@ export default function Read({ tasks, completedTasks, handleToggleTask, handleDe
                     ))}
                 </ul>
             )}
+             <div className={styles.taskHeader}>
+                <h2>Tareas</h2>
+                <span>({completedTasks}/{tasks.length})</span>
+            </div>
         </div>
     );
 }
