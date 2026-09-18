@@ -43,7 +43,7 @@ export default function Read({ tasks, deletedTasks, completedTasks, handleToggle
                         }}
                     >
                         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                            <img src="/OA-LOGO.svg" alt="Logo Opción Atlántico" style={{ height: '24px', width: 'auto' }} />
+                            <img src="/trash.png" alt="Papelera" style={{ height: '24px', width: 'auto' }} />
                             <span>Papelera ({deletedTasks.length})</span>
                         </div>
                         <span style={{ fontSize: '0.8em', transition: 'transform 0.2s', transform: isTrashOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>
