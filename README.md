@@ -1,4 +1,4 @@
-# BPDS - Atlantico Option Scholarship Program
+# BPDS - Opcion Atlantico Scholarship Program
 
 Team: Gabriel Arenas Quijano, Laura Isabella Truyol Camacho, Leandro Aaron Mendoza Navarro, Sebastián David Barrios Barrios y Jesús David Estrada Machacón.
 
