@@ -1,30 +1,32 @@
-"use server";
-import fs from "fs";
-import path from "path";
+import type { Task } from "./page";
 
-// Definimos la ruta del archivo JSON donde persistirán los datos
-const dataFilePath = path.join(process.cwd(), "data.json");
+const STORAGE_KEY = "bpds_tasks";
 
-// Leer tareas desde el archivo JSON
-export async function getTasks() {
+// Leer tareas desde localStorage
+export function getTasks(): Task[] {
+    if (typeof window === "undefined") {
+        return [];
+    }
     try {
-        if (!fs.existsSync(dataFilePath)) {
-            // Creamos el archivo si no existe
-            fs.writeFileSync(dataFilePath, JSON.stringify([]));
+        const data = localStorage.getItem(STORAGE_KEY);
+        if (!data) {
+            return [];
         }
-        const data = fs.readFileSync(dataFilePath, "utf8");
-        return JSON.parse(data);
+        return JSON.parse(data) as Task[];
     } catch (error) {
-        console.error("Error leyendo JSON:", error);
+        console.error("Error leyendo desde localStorage:", error);
         return [];
     }
 }
 
-// Escribir tareas al archivo JSON
-export async function saveTasks(tasks: any[]) {
+// Guardar tareas en localStorage
+export function saveTasks(tasks: Task[]): void {
+    if (typeof window === "undefined") {
+        return;
+    }
     try {
-        fs.writeFileSync(dataFilePath, JSON.stringify(tasks, null, 2));
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
     } catch (error) {
-        console.error("Error escribiendo JSON:", error);
+        console.error("Error guardando en localStorage:", error);
     }
 }

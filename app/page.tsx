@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import styles from "./page.module.css";
 import Create from "./modules_CRUD/create";
 import Read from "./modules_CRUD/read";
-import { getTasks, saveTasks } from "./actions"; // Integración de persistencia JSON
+import { getTasks, saveTasks } from "./actions"; // Integración de persistencia con localStorage
 
 export interface Task {
     id: number;
@@ -16,22 +16,21 @@ export interface Task {
 function useTasks() {
     const [tasks, setTasks] = useState<Task[]>([]);
     const [deletedTasks, setDeletedTasks] = useState<Task[]>([]);
-    const [isLoaded, setIsLoaded] = useState(false); // Estado para saber si ya cargó el JSON
+    const [isLoaded, setIsLoaded] = useState(false); // Estado para saber si ya cargó desde localStorage
 
-    // Cargar las tareas desde el JSON al montar el componente
+    // Cargar las tareas desde localStorage al montar el componente
     useEffect(() => {
-        getTasks().then((loadedTasks) => {
-            if (loadedTasks) {
-                const active = loadedTasks.filter((t: Task) => !t.isDeleted);
-                const deleted = loadedTasks.filter((t: Task) => t.isDeleted);
-                setTasks(active);
-                setDeletedTasks(deleted);
-            }
-            setIsLoaded(true);
-        });
+        const loadedTasks = getTasks();
+        if (loadedTasks) {
+            const active = loadedTasks.filter((t: Task) => !t.isDeleted);
+            const deleted = loadedTasks.filter((t: Task) => t.isDeleted);
+            setTasks(active);
+            setDeletedTasks(deleted);
+        }
+        setIsLoaded(true);
     }, []);
 
-    // Guardar en el JSON cada vez que tasks o deletedTasks cambian
+    // Guardar en localStorage cada vez que tasks o deletedTasks cambian
     useEffect(() => {
         if (isLoaded) {
             saveTasks([...tasks, ...deletedTasks]);
