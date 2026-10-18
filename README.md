@@ -1,6 +1,6 @@
 # BPDS - Opcion Atlantico Scholarship Program
 
-Team: Gabriel Arenas Quijano, Laura Isabella Truyol Camacho, Leandro Aaron Mendoza Navarro, Sebastián David Barrios Barrios y Jesús David Estrada Machacón. 
+Team: Gabriel Arenas Quijano, Laura Isabella Truyol Camacho, Leandro Aaron Mendoza Navarro, Sebastián David Barrios Barrios y Jesús David Estrada Machacón.
 
 ## Project Overview
 
@@ -47,6 +47,7 @@ Tasks can be checked off when completed. The interface shows the number of compl
 
 ### 4. Task editing
 Each task can be edited in place. This allows users to correct wording or adjust task details without creating a duplicate item.
+.
 
 <img width="449" height="455" alt="image" src="https://github.com/user-attachments/assets/e249aad1-7055-48bb-9ab9-80feab06c47b" />
 
