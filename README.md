@@ -12,7 +12,7 @@ BPDS is a management platform designed to track and manage pending applications 
 
 This project allows users to:
 
-- create new tasks  
+- create new tasks     
 - mark tasks as completed
 - edit task descriptions
 - delete tasks from the active list
