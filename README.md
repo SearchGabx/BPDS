@@ -25,7 +25,7 @@ The interface is intentionally simple and focused on clarity, making it suitable
 
 ### 1. Task creation
 Users can add tasks using an input field and a button. Each new task is stored with:
-- a unique ID
+- a unique ID 
 - the task text
 - a completion status
 - a deleted flag
